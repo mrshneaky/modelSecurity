@@ -1,9 +1,20 @@
 pipeline {
-    agent { docker { image 'python:3.12.4-alpine3.20' } }
+    agent {
+        dockerContainer {
+            image 'python:3.12.4-alpine3.20'
+        }
+    }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'python --version'
+                echo 'Building...'
+                // Your build steps here
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                // Your test steps here
             }
         }
     }
