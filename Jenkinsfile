@@ -1,20 +1,9 @@
 pipeline {
-    agent {
-        dockerContainer {
-            image 'python:3.12.4-alpine3.20'
-        }
-    }
+    agent any 
     stages {
-        stage('Build') {
+        stage('Stage 1') {
             steps {
-                echo 'Building...'
-                // Your build steps here
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                // Your test steps here
+                echo 'Hello world!' 
             }
         }
     }
